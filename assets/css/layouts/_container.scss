@@ -23,6 +23,8 @@
     flex-direction: column;
     justify-content: space-around;
     padding: 15% 10%;
+    position: relative;
+    cursor: pointer;
 
     h3 {
       font-size: 1.4rem;
@@ -32,6 +34,44 @@
     &:nth-of-type(4) {
       h3 {
         text-transform: uppercase;
+      }
+    }
+
+    &:first-of-type {
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 1px solid rgb(46, 188, 236);
+        border-radius: 10px;
+        transition: transform 0.5s;
+        transform: rotate(0deg);
+      }
+
+      &:hover:before {
+        transform: rotate(360deg);
+      }
+    }
+
+    &:nth-of-type(2) {
+      border: none;
+      box-shadow: none;
+      background: rgb(1, 1, 61);
+
+      &::before {
+        content: "";
+        background: conic-gradient(rgb(46, 188, 236) 20deg, transparent 120deg);
+        height: 102%;
+        width: 102%;
+        position: absolute;
+        top: O;
+        left: -1%;
+        z-index: -1;
+        border-radius: 10px;
+        animation: line 4s infinite;
       }
     }
   }

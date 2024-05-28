@@ -17,3 +17,10 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
+@keyframes line {
+  0% {
+    transform: rotate(0deg);
+    transform: rotate(360deg);
+  }
+}
