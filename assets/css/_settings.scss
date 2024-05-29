@@ -16,6 +16,18 @@ body {
   padding: 10vh 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    animation: scaleBackground 10s ease-in-out infinite alternate;
+    transform-origin: top left;
+  }
 }
 
 @keyframes rotate {
@@ -24,5 +36,14 @@ body {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes scaleBackground {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.5);
   }
 }
